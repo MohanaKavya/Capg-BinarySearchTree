@@ -25,5 +25,7 @@ public class MyBinarySearchTreeTest {
 		myBinarySearchTree.add(67);
 		int fullSize=myBinarySearchTree.getSize();
 		assertEquals(13, fullSize);
+		int key = myBinarySearchTree.search(63);
+		assertEquals(63, key);
 	}
 }

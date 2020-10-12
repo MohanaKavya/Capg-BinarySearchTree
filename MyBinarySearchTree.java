@@ -29,6 +29,22 @@ public class MyBinarySearchTree<T extends Comparable<T>> {
 									   + getSizeRecursively(current.getRight());
 	}
 
+	public T search(T search) {
+		return searchRecursively(root, search);
+	}
+
+	private T searchRecursively(INode current, T search) {
+		if(current==null)
+		return null;
+		int compare = current.getKey().compareTo(search);
+		if(compare==0)
+			return (T) current.getKey();
+		else if(compare==1)
+			return searchRecursively(current.getLeft(), search);
+		else
+			return searchRecursively(current.getRight(), search);		
+	}
+
 }
 
 
